@@ -1,0 +1,31 @@
+
+
+<ion-content>
+  <ion-toolbar color="dark" style="text-align:center">
+    <ion-title>
+      Ingresar
+    </ion-title>
+  </ion-toolbar>  
+    <ion-grid class="logocase" style="text-align: center" style="height: 150px;" >
+      <ion-row>
+        <ion-col>
+          <img  src="assets/img/logocase.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    
+  <div class="contenedorBotones">
+    <ion-button  class="centrado" expand="block" color="primary" type="button" href="/folder/pastas">
+      <!-- <ion-icon name="logo-facebook"></ion-icon>-->
+      Iniciar Sesión con Google
+    </ion-button>
+
+    <div class="margenBotones"></div>
+    <ion-button class="centrado" expand="block" color="primary" type="button" (click)="loguearFB()">
+      <!-- <ion-icon name="logo-google"></ion-icon>-->
+      Iniciar Sesión con Facebook
+    </ion-button>
+    {{facebook_account}}
+  </div>
+</ion-content>

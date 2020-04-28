@@ -14,8 +14,75 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="lista_Categorias" *ngIf="folder =='pastas'">
+    <ion-card *ngFor = "let e of listaPastas">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-title>Producto: {{e.nombre}}</ion-title>
+              <ion-img src="{{e.imagen}}" style="height:230px"></ion-img>
+              <ion-title>Precio: {{e.precio}}</ion-title>
+                <ion-button  color="tertiary" size="small" shape="round" expand="full" 
+                            (click)="agregar_producto(e.nombre, e.precio)"
+                            (click)="mensaje(nombre,apellido)">Comprar
+                  <ion-icon name="cart"></ion-icon>
+                </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card>
   </div>
+  <div id="lista_Categorias" *ngIf="folder =='amaranto'">
+    <ion-card *ngFor = "let e of listaAmaranto">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-title>Producto: {{e.nombre}}</ion-title>
+              <ion-img src="{{e.imagen}}" style="height:230px"></ion-img>
+              <ion-title>Precio: {{e.precio}}</ion-title>
+                <ion-button  color="tertiary" size="small" shape="round" expand="full" 
+                            (click)="agregar_producto(e.nombre, e.precio)"
+                            (click)="mensaje(nombre,apellido)">Comprar
+                  <ion-icon name="cart"></ion-icon>
+                </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card>
+  </div>
+  <div id="lista_Categorias" *ngIf="folder =='quinua'">
+    <ion-card *ngFor = "let e of listaQuinua">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-title>Producto: {{e.nombre}}</ion-title>
+              <ion-img src="{{e.imagen}}" style="height:230px"></ion-img>
+              <ion-title>Precio: {{e.precio}}</ion-title>
+                <ion-button  color="tertiary" size="small" shape="round" expand="full" 
+                            (click)="agregar_producto(e.nombre, e.precio)"
+                            (click)="mensaje(nombre,apellido)">Comprar
+                  <ion-icon name="cart"></ion-icon>
+                </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card>
+  </div>
+  <div class="lista_" id="lista" *ngIf = "folder == 'lista'">
+    <ion-grid>
+      <ion-row *ngFor = "let j of productos">
+        <ion-col size="6">    {{j.nombre}} </ion-col>
+        <ion-col size="3">Bs: {{j.precio}} </ion-col>
+        <ion-col size="1">
+          <ion-button color="danger" size="small" (click)="eliminar(j.id)" >
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+
+
 </ion-content>
